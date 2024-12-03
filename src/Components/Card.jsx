@@ -25,6 +25,15 @@ function Card() {
       stock: true,
     },
   ];
+
+
+  const handleClick = (stock , name) => {
+    if(stock){
+      alert(`${name} is now available`)
+    } else {
+      alert(`${name} is currently out of stock`)
+    }
+  }
   return (
     <div className="w-full h-screen bg-zinc-200 flex items-center justify-center gap-4">
       {data.map((e, index) => (
@@ -41,7 +50,7 @@ function Card() {
           <div className="w-full px-3 py-4">
             <h2 className="font-semibold">{e.name}</h2>
             <p className="text-xs mt-5">{e.description}</p>
-            <button className={`mt-3 px-4 py-1 text-white text-sm ${e.stock ? "bg-blue-400" : "bg-red-400"} rounded font-normal`}>
+            <button onMouseOver={()=>handleClick(e.stock , e.name )} className={`mt-3 px-4 py-1 text-white text-sm ${e.stock ? "bg-blue-400" : "bg-red-400"} rounded font-normal`}>
               {e.stock ? `In Stock` : `Out of Stock`}
             </button>
           </div>
