@@ -1,12 +1,14 @@
-import React from 'react'
-import Card from './Components/Card'
+import React from "react";
+import Card from "./Components/Card";
 
 function App() {
+  const data = ["akljd", "abpugs", "skdfjsk", "fejfirjf", "mvrijsifj"];
+
   return (
-    <div>
+    <>
       <Card />
-    </div>
-  )
+    </>
+  );
 }
 
-export default App
+export default App;
